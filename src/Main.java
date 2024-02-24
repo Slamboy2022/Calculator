@@ -94,7 +94,11 @@ public class Main {
 
         int result = main.calcArab(number1, operator, number2);
 
-        if (isRomanNumber){
+        if (isRomanNumber)
+        {
+            if(result <= 0) throw new IllegalArgumentException("ОШИБКА: Римские числа не могут быть отрицательными");
+
+            
             String sign = result < 0 ? "-" : "";
             return sign + main.arabToRomeConvert(Math.abs(result));
         }
